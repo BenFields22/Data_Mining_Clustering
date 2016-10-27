@@ -158,9 +158,9 @@ void assignPointsToCentroids(DataSet set,std::vector<std::vector<Point> > &myClu
 				smallest = i;
 			}
 		}
-		//printf("Point %d was closest to centoid %d\n", j + 1, smallest);
+		
 		set.assignCluster(j, smallest);
-		//printf("Point %d assigned to cluster %d\n", j + 1, set.getPoint(j).getCluster());
+		
 		myClusters[smallest].push_back(set.getPoint(j));
 	}
 }
@@ -174,9 +174,9 @@ void assignPointsToCentroidsB(std::vector<Point> &initCluster, std::vector<std::
 				smallest = i;
 			}
 		}
-		//printf("Point %d was closest to centoid %d\n", j + 1, smallest);
+		
 		initCluster[j].setCluster(smallest);
-		//printf("Point %d assigned to cluster %d\n", j + 1, set.getPoint(j).getCluster());
+		
 		myClusters[smallest].push_back(initCluster[j]);
 	}
 }
@@ -224,10 +224,14 @@ float calculateTotalSSE(float *SSEofClusters, int numKs) {
 	return total;
 }
 
-void writeToFile(std::vector< std::vector<Point> > &myClusters, int numKs,int iteration) {
+void writeToFile(std::vector< std::vector<Point> > &myClusters, int numKs,int iteration,float * SSE,float totSSE) {
 	std::ofstream myFile;
 	myFile.open("Results.csv");
 	myFile << "Clustering Results after "<<iteration<<" iterations:\n\n";
+	for (int i = 0; i < myClusters.size(); i++) {
+		myFile << "SSE of cluster ," << i + 1 << " : " << SSE[i] << "\n";
+	}
+	myFile << "Total SSE: ," << totSSE << "\n";
 	for (int i = 0; i < numKs; i++) {
 		myFile << "Cluster: " << i + 1 << "\n";
 		myFile << "Data:\n";
@@ -248,6 +252,8 @@ std::vector< std::vector<Point> > loopKmeans(DataSet set, int numKs, Point *init
 	int iteration = 1;
 	bool stop = false;
 	std::vector< std::vector<Point> > myClusters(numKs);
+	
+	
 	while (stop == false) {
 		iteration++;
 		assignPointsToCentroids(set, myClusters, initialCentroids, numKs);
@@ -275,25 +281,29 @@ std::vector< std::vector<Point> > loopKmeans(DataSet set, int numKs, Point *init
 			}
 		}
 	}
+	Point *newCentroids = CalculateNewAverages(myClusters, numKs);
+	float *SSEofClusters = calcSSEofClusters(myClusters, newCentroids, numKs);
+	float totSSE = calculateTotalSSE(SSEofClusters, numKs);
 	printf("Kmeans has converged afer %d iterations\n", iteration);
-	writeToFile(myClusters, numKs,iteration);
+	//writeToFile(myClusters, numKs,iteration,SSEofClusters,totSSE);
 	return myClusters;
 }
 std::vector< std::vector<Point> > loopKmeansB(std::vector<Point> init, int numKs, Point *initialCentroids) {
 	int iteration = 1;
 	bool stop = false;
 	std::vector< std::vector<Point> > myClusters(numKs);
+	
 	while (stop == false) {
 		iteration++;
 		assignPointsToCentroidsB(init, myClusters, initialCentroids, numKs);
 		Point *newCentroids = CalculateNewAverages(myClusters, numKs);
 		float *SSEofClusters = calcSSEofClusters(myClusters, newCentroids, numKs);
 		float totSSE = calculateTotalSSE(SSEofClusters, numKs);
-		printf("\niteration %d\n", iteration);
+		/*printf("\niteration %d\n", iteration);
 		for (int i = 0; i < numKs; i++) {
 			printf("The SSE of cluster %d is %.2f\n", i + 1, SSEofClusters[i]);
 		}
-		printf("The total SSE is %.2f\n", totSSE);
+		printf("The total SSE is %.2f\n", totSSE);*/
 		stop = true;
 		for (int i = 0; i < numKs; i++) {
 			if (newCentroids[i].EuclidianDistanceTo(initialCentroids[i]) < .0001) {
@@ -311,7 +321,10 @@ std::vector< std::vector<Point> > loopKmeansB(std::vector<Point> init, int numKs
 		}
 	}
 	printf("Kmeans has converged afer %d iterations\n", iteration);
-	writeToFile(myClusters, numKs, iteration);
+	Point *newCentroids = CalculateNewAverages(myClusters, numKs);
+	float *SSEofClusters = calcSSEofClusters(myClusters, newCentroids, numKs);
+	float totSSE = calculateTotalSSE(SSEofClusters, numKs);
+	//writeToFile(myClusters, numKs, iteration,SSEofClusters,totSSE);
 	return myClusters;
 }
 
@@ -354,6 +367,8 @@ void kmeansB(int numKs, std::vector<Point> &InitCluster, int posRemove, std::vec
 
 std::vector< std::vector<Point> > bisectingKmeans(DataSet &set,int numKs) {
 	std::vector< std::vector<Point> > myClusters(1);
+	
+	
 	for (int i = 0; i < 400; i++) {
 		myClusters[0].push_back(set.getPoint(i));
 	}
@@ -366,9 +381,10 @@ std::vector< std::vector<Point> > bisectingKmeans(DataSet &set,int numKs) {
 	while ((int)myClusters.size() < numKs) {
 		iteration++;
 		kmeansB(2, myClusters[posRemove],posRemove,myClusters);
-		printf("The number of clusters after is %d\n", myClusters.size());
+		//printf("The number of clusters after is %d\n", myClusters.size());
 		Point *averages = CalculateNewAverages(myClusters, myClusters.size());
 		float *SSEofClusters = calcSSEofClusters(myClusters, averages, myClusters.size());
+		
 		int biggest = 0;
 		for (int i = 0; i < (int)myClusters.size(); i++) {
 			if (SSEofClusters[i] > SSEofClusters[biggest]) {
@@ -376,10 +392,17 @@ std::vector< std::vector<Point> > bisectingKmeans(DataSet &set,int numKs) {
 			}
 		}
 		posRemove = biggest;
+		
 	}
-
-	printf("Bisecting K-means complete with %d clusters after %d iterations\n", myClusters.size(),iteration);
-	//writeToFile(myClusters, numKs, iteration);
+	Point *averages = CalculateNewAverages(myClusters, myClusters.size());
+	float *SSEofClusters = calcSSEofClusters(myClusters, averages, myClusters.size());
+	float totSSE = calculateTotalSSE(SSEofClusters, myClusters.size());
+	printf("Bisecting K-means complete with %d clusters after %d iterations\n\n", myClusters.size(),iteration);
+	for (int i = 0; i < (int)myClusters.size(); i++) {
+		printf("The SSE of cluster %d is %f\n", i + 1, SSEofClusters[i]);
+	}
+	printf("The total SSE is : %f\n", totSSE);
+	writeToFile(myClusters, numKs,iteration, SSEofClusters,totSSE);
 	return myClusters;
 }
 
