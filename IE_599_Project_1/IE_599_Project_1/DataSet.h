@@ -1,3 +1,8 @@
+/****************************************************************************************************************
+Author: Benjamin Fields
+file :header file for data set class
+Description :contains structure for class
+************************************************************************************************************** */
 #ifndef DATASET_H
 #define DATASET_H
 #include "Point.h"
