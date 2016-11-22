@@ -1,0 +1,152 @@
+Merge Results
+
+Merge 1
+Cluster 1 ID: 2
+Cluster 2 ID: 3
+Merge Value: 23.9735
+
+Merge 2
+Cluster 1 ID: 18
+Cluster 2 ID: 19
+Merge Value: 56.0803
+
+Merge 3
+Cluster 1 ID: 16
+Cluster 2 ID: 27
+Merge Value: 91.8096
+
+Merge 4
+Cluster 1 ID: 17
+Cluster 2 ID: 26
+Merge Value: 107.564
+
+Merge 5
+Cluster 1 ID: 4
+Cluster 2 ID: 25
+Merge Value: 108.208
+
+Merge 6
+Cluster 1 ID: 10
+Cluster 2 ID: 11
+Merge Value: 119.269
+
+Merge 7
+Cluster 1 ID: 18, 19
+Cluster 2 ID: 28
+Merge Value: 167.151
+
+Merge 8
+Cluster 1 ID: 18, 19, 28
+Cluster 2 ID: 20
+Merge Value: 244.94
+
+Merge 9
+Cluster 1 ID: 7
+Cluster 2 ID: 21
+Merge Value: 270.106
+
+Merge 10
+Cluster 1 ID: 5
+Cluster 2 ID: 6
+Merge Value: 280.667
+
+Merge 11
+Cluster 1 ID: 18, 19, 28, 20
+Cluster 2 ID: 29
+Merge Value: 302.233
+
+Merge 12
+Cluster 1 ID: 10, 11
+Cluster 2 ID: 9
+Merge Value: 332.852
+
+Merge 13
+Cluster 1 ID: 5, 6
+Cluster 2 ID: 30
+Merge Value: 424.764
+
+Merge 14
+Cluster 1 ID: 7, 21
+Cluster 2 ID: 8
+Merge Value: 559.636
+
+Merge 15
+Cluster 1 ID: 5, 6, 30
+Cluster 2 ID: 1
+Merge Value: 621.584
+
+Merge 16
+Cluster 1 ID: 16, 27
+Cluster 2 ID: 17, 26
+Merge Value: 639.901
+
+Merge 17
+Cluster 1 ID: 2, 3
+Cluster 2 ID: 4, 25
+Merge Value: 677.728
+
+Merge 18
+Cluster 1 ID: 18, 19, 28, 20, 29
+Cluster 2 ID: 22
+Merge Value: 910.764
+
+Merge 19
+Cluster 1 ID: 14
+Cluster 2 ID: 15
+Merge Value: 1062.72
+
+Merge 20
+Cluster 1 ID: 12
+Cluster 2 ID: 13
+Merge Value: 1677.1
+
+Merge 21
+Cluster 1 ID: 18, 19, 28, 20, 29, 22
+Cluster 2 ID: 23
+Merge Value: 2505.37
+
+Merge 22
+Cluster 1 ID: 10, 11, 9
+Cluster 2 ID: 31
+Merge Value: 4523.81
+
+Merge 23
+Cluster 1 ID: 2, 3, 4, 25
+Cluster 2 ID: 16, 27, 17, 26
+Merge Value: 5036.63
+
+Merge 24
+Cluster 1 ID: 12, 13
+Cluster 2 ID: 24
+Merge Value: 6177.41
+
+Merge 25
+Cluster 1 ID: 5, 6, 30, 1
+Cluster 2 ID: 7, 21, 8
+Merge Value: 10262.2
+
+Merge 26
+Cluster 1 ID: 12, 13, 24
+Cluster 2 ID: 14, 15
+Merge Value: 18046.6
+
+Merge 27
+Cluster 1 ID: 2, 3, 4, 25, 16, 27, 17, 26
+Cluster 2 ID: 18, 19, 28, 20, 29, 22, 23
+Merge Value: 43318.2
+
+Merge 28
+Cluster 1 ID: 2, 3, 4, 25, 16, 27, 17, 26, 18, 19, 28, 20, 29, 22, 23
+Cluster 2 ID: 5, 6, 30, 1, 7, 21, 8
+Merge Value: 108978
+
+Merge 29
+Cluster 1 ID: 2, 3, 4, 25, 16, 27, 17, 26, 18, 19, 28, 20, 29, 22, 23, 5, 6, 30, 1, 7, 21, 8
+Cluster 2 ID: 10, 11, 9, 31
+Merge Value: 146394
+
+Merge 30
+Cluster 1 ID: 2, 3, 4, 25, 16, 27, 17, 26, 18, 19, 28, 20, 29, 22, 23, 5, 6, 30, 1, 7, 21, 8, 10, 11, 9, 31
+Cluster 2 ID: 12, 13, 24, 14, 15
+Merge Value: 477783
+

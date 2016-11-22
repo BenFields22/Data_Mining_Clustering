@@ -1,0 +1,77 @@
+Merge Results
+
+Merge 1
+Cluster 1 ID: 10
+Cluster 2 ID: 16
+Merge Value: 54.626
+
+Merge 2
+Cluster 1 ID: 5
+Cluster 2 ID: 13
+Merge Value: 157.48
+
+Merge 3
+Cluster 1 ID: 10, 16
+Cluster 2 ID: 8
+Merge Value: 172.898
+
+Merge 4
+Cluster 1 ID: 1
+Cluster 2 ID: 15
+Merge Value: 176.516
+
+Merge 5
+Cluster 1 ID: 1, 15
+Cluster 2 ID: 7
+Merge Value: 199.169
+
+Merge 6
+Cluster 1 ID: 10, 16, 8
+Cluster 2 ID: 6
+Merge Value: 214.179
+
+Merge 7
+Cluster 1 ID: 4
+Cluster 2 ID: 9
+Merge Value: 217.49
+
+Merge 8
+Cluster 1 ID: 5, 13
+Cluster 2 ID: 11
+Merge Value: 302.981
+
+Merge 9
+Cluster 1 ID: 10, 16, 8, 6
+Cluster 2 ID: 14
+Merge Value: 341.777
+
+Merge 10
+Cluster 1 ID: 2
+Cluster 2 ID: 3
+Merge Value: 359.662
+
+Merge 11
+Cluster 1 ID: 1, 15, 7
+Cluster 2 ID: 12
+Merge Value: 396.079
+
+Merge 12
+Cluster 1 ID: 10, 16, 8, 6, 14
+Cluster 2 ID: 4, 9
+Merge Value: 1291.02
+
+Merge 13
+Cluster 1 ID: 1, 15, 7, 12
+Cluster 2 ID: 2, 3
+Merge Value: 1839.6
+
+Merge 14
+Cluster 1 ID: 10, 16, 8, 6, 14, 4, 9
+Cluster 2 ID: 5, 13, 11
+Merge Value: 4239.28
+
+Merge 15
+Cluster 1 ID: 10, 16, 8, 6, 14, 4, 9, 5, 13, 11
+Cluster 2 ID: 1, 15, 7, 12, 2, 3
+Merge Value: 26103.8
+
