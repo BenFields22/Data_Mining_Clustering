@@ -1,6 +1,7 @@
 /********************************************************
 Author:Benjamin Fields
 Date:11/22/2016
+File:Cluster.h
 Description:Data structure to contain the functionality for 
 each cluster to be used in the program. This class contains
 the functionality for calculating the group average between 

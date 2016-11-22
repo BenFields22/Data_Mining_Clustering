@@ -1,6 +1,7 @@
 /********************************************************
 Author:Benjamin Fields
 Date:11/22/2016
+File:Point.h
 Description:Data structure to represent each data point. Each 
 point in this program has three attributes related to three 
 dimensions.This class also contains the function for euclidian 

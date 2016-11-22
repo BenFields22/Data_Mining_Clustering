@@ -1,6 +1,7 @@
 /********************************************************
 Author:Benjamin Fields
 Date:11/22/2016
+File: Source.cpp
 Description:Program that implements Agglomerative Clustering algorithm
 on a three dimensional data set related to crime rates and moons in
 the solar system. The program creates a proximity matrix using 

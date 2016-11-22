@@ -1,6 +1,7 @@
 /********************************************************
 Author:Benjamin Fields
 Date:11/22/2016
+File: Point.cpp
 Description:Implementation of the point class.
 *************************************************************/
 #include "Point.h"

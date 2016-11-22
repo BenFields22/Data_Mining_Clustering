@@ -1,6 +1,7 @@
 /********************************************************
 Author:Benjamin Fields
 Date:11/22/2016
+File:Clustering.h
 Description:Data structure to allow for easy data management
 of the clusters as the program iterates through each merge.
 this class contains the functionality for identifying the closest

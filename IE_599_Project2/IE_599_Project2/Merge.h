@@ -1,6 +1,7 @@
 /********************************************************
 Author:Benjamin Fields
 Date:11/22/2016
+File:Merge.h
 Description:Data structure used to contain the information from
 each merge. 
 *************************************************************/

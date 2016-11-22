@@ -1,6 +1,7 @@
 /********************************************************
 Author:Benjamin Fields
 Date:11/22/2016
+File:Cluster.cpp
 Description:implementation of the cluster class 
 *************************************************************/
 #include "Cluster.h"
